@@ -92,7 +92,7 @@ private:
     Connection *cnx;
     QSqlQueryModel *model;
     /*  Form  */
-
+    /*  This form will be class */
     QFormLayout *form;
     QHBoxLayout *buttons_vc;
     QVBoxLayout *formulaire;
