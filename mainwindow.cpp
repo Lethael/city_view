@@ -9,11 +9,11 @@ MainWindow::MainWindow(QWidget *parent) :
     cnx = new Connection(this);
     setWindowTitle("Cities View");
 
-    driver = "QMYSQL";
-    database = "localisation";
+    driver = "QSQLITE";
+    database = "books.db";
     hostname = "localhost";
-    username = "root";
-    password = "1234512345";
+    username = "";
+    password = "";
 
 
     if(checkDB())
@@ -92,7 +92,7 @@ void MainWindow::createForm()
 bool MainWindow::checkDB()
 {
 
-    if(!cnx->getDrivers().contains("QMYSQL")) {
+    if(!cnx->getDrivers().contains("QSQLITE")) {
        QMessageBox::critical(this, "Chargement base impossible",
                                         "<font color=red>Cette application nécessite le driver QMySQL</font>");
        return false;
